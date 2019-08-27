@@ -38,16 +38,16 @@ class App extends Component {
   //Toggle Complete
   markComplete = (id) => {
     this.setState({ todos : this.state.todos.map(todo => {
-      if (todo.id == id) {
+      if (todo.id === id) {
         todo.completed = !todo.completed
       }
       return todo;
     }) });
-  }
+  };
 
   delTodo = (id) => {
-    this.setState({ todos : [...this.state.todos.filter(todo => (todo.id != id))]});
-  }
+    this.setState({ todos : [...this.state.todos.filter(todo => (todo.id !== id))]});
+  };
 
   // Add Todo
   addTodo = (title) => {
@@ -55,9 +55,9 @@ class App extends Component {
       id: uuid.v4(),
       title: title,
       completed: false
-    }
+    };
     this.setState({ todos : [...this.state.todos, newTodo]})
-  }
+  };
 
   render() {
     return (
